@@ -58,16 +58,16 @@ stages:
 # ******************************************************************
 # Stage: Code Analysis
 # ******************************************************************
-- stage: code_analysis
-  displayName: Code Analysis    
-  jobs:
+#( changed by MR)- stage: code_analysis
+#( changed by MR)  displayName: Code Analysis    
+#( changed by MR)  jobs:
 
   # ******************************************************************
   # Job: Fetch Technical Debt
   # ******************************************************************
   # Fetch technical debt data from AI Mentor Studio
   # ******************************************************************
-  - template: ./jobs/FetchTechnicalDebtJob.yaml
+#( changed by MR)  - template: ./jobs/FetchTechnicalDebtJob.yaml
 
   # ******************************************************************
   # Job: Validate Technical Debt
@@ -76,7 +76,7 @@ stages:
   # ******************************************************************
   # Sample script to validate TechDebt level and number of 
   # security findings
-  - template: ./jobs/ValidateTechnicalDebtJob.yaml 
+#( changed by MR)  - template: ./jobs/ValidateTechnicalDebtJob.yaml 
 
 # ******************************************************************
 # Stage: Regression Testing
