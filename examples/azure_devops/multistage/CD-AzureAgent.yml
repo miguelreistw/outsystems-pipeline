@@ -108,62 +108,62 @@ stages:
 # ******************************************************************
 # Stage: Release Acceptance
 # ******************************************************************
-- stage: release_acceptance
-  displayName: Release Acceptance
-  jobs:
+#( changed by MR)- stage: release_acceptance
+#( changed by MR)  displayName: Release Acceptance
+#( changed by MR)  jobs:
 
   # ******************************************************************
   # Job: LifeTime Deployment
   # ******************************************************************
   # Deploy list of application versions to ACC environment
   # ******************************************************************
-  - template: ./jobs/LifeTimeDeploymentJob.yaml
-    parameters:
-      EnvironmentKey: $(Environment.Acceptance.Key)
-      SourceEnvironmentLabel: $(Environment.Regression.Label)
-      DestinationEnvironmentLabel: $(Environment.Acceptance.Label)
+#( changed by MR)  - template: ./jobs/LifeTimeDeploymentJob.yaml
+#( changed by MR)    parameters:
+#( changed by MR)      EnvironmentKey: $(Environment.Acceptance.Key)
+#( changed by MR)      SourceEnvironmentLabel: $(Environment.Regression.Label)
+#( changed by MR)      DestinationEnvironmentLabel: $(Environment.Acceptance.Label)
 
   # ******************************************************************
   # Job: Accept Changes
   # ******************************************************************
   # Accept release candidate before go-live
   # ******************************************************************
-  - template: ./jobs/AcceptChangesJob.yaml
+#( changed by MR)  - template: ./jobs/AcceptChangesJob.yaml
 
 # ******************************************************************
 # Stage: Dry-Run
 # ******************************************************************
-- stage: dry_run
-  displayName: Dry-Run
-  jobs:
+#( changed by MR)- stage: dry_run
+#( changed by MR)  displayName: Dry-Run
+#( changed by MR)  jobs:
 
   # ******************************************************************
   # Job: LifeTime Deployment
   # ******************************************************************
   # Deploy list of application versions to PRE environment
   # ******************************************************************
-  - template: ./jobs/LifeTimeDeploymentJob.yaml
-    parameters:
-      EnvironmentKey: $(Environment.PreProduction.Key)
-      SourceEnvironmentLabel: $(Environment.Acceptance.Label)
-      DestinationEnvironmentLabel: $(Environment.PreProduction.Label)
+#( changed by MR)  - template: ./jobs/LifeTimeDeploymentJob.yaml
+#( changed by MR)    parameters:
+#( changed by MR)      EnvironmentKey: $(Environment.PreProduction.Key)
+#( changed by MR)      SourceEnvironmentLabel: $(Environment.Acceptance.Label)
+#( changed by MR)      DestinationEnvironmentLabel: $(Environment.PreProduction.Label)
 
 # ******************************************************************
 # Stage: Go-Live
 # ******************************************************************
-- stage: go_live
-  displayName: Go-Live
-  jobs:
+#( changed by MR)- stage: go_live
+#( changed by MR)  displayName: Go-Live
+#( changed by MR)  jobs:
 
   # ******************************************************************
   # Job: LifeTime Deployment
   # ******************************************************************
   # Deploy list of application versions to PRD environment
   # ******************************************************************
-  - template: ./jobs/LifeTimeDeploymentJob.yaml
-    parameters:
-      EnvironmentKey: $(Environment.Production.Key)
-      SourceEnvironmentLabel: $(Environment.PreProduction.Label)
-      DestinationEnvironmentLabel: $(Environment.Production.Label)
-    # To enable 2stage-deploy on this environment uncomment the line below 
-    #  Use2StepDeployment: true
+#( changed by MR)  - template: ./jobs/LifeTimeDeploymentJob.yaml
+#( changed by MR)    parameters:
+#( changed by MR)      EnvironmentKey: $(Environment.Production.Key)
+#( changed by MR)      SourceEnvironmentLabel: $(Environment.PreProduction.Label)
+#( changed by MR)      DestinationEnvironmentLabel: $(Environment.Production.Label)
+#( changed by MR)    # To enable 2stage-deploy on this environment uncomment the line below 
+#( changed by MR)    #  Use2StepDeployment: true
